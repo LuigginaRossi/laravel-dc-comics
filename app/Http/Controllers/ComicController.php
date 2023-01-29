@@ -69,7 +69,7 @@ class ComicController extends Controller
         //cerca un elemento con $id ricevuto:
         $comic= Comic::findOrFail($id);
         if (!$comic) {
-            // faccio un altra ricerca o lancio un errore.
+            abort(404, "Not found!");
         }
         return view("comics.show", compact('comic'));
     }
@@ -82,7 +82,11 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic= Comic::findOrFail($id);
+        if (!$comic) {
+            abort(404, "Not found!");
+        }
+        return view("comics.edit", compact('comic'));
     }
 
     /**
@@ -94,7 +98,20 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data= $request::all();
+        $comic = Comic::findOrFail($id);
+        $comic->title= $data['title'];
+        $comic->description= $data['description'];
+        $comic->thumb= $data['thumb'];
+        $comic->price= $data['price'];
+        $comic->series= $data['series'];
+        $comic->sale_date= $data['sale_date'];
+        $comic->type= $data['type'];
+
+        $comic->save();
+
+        //una volta creato il nuovo elemento, sposto l'utente in un altra pagina:
+        return redirect()->route("comics.show", $comic->id);
     }
 
     /**
@@ -105,6 +122,8 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic= Comic::findOrFail($id);
+        $comic->delete();
+        return redirect("/comics.index");
     }
 }

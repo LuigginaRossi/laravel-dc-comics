@@ -1,5 +1,6 @@
-<h6>Visualizzo il mio singolo fumetto</h6>
+@extends('layouts.app')
 
+@section('content')
 <div class="col">
     <div class="card">
         <img src="..." class="card-img-top" alt="...">
@@ -15,3 +16,4 @@
         </div>
     </div>
 </div>
+@endsection
