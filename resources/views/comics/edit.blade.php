@@ -38,5 +38,8 @@
 
 
     <button class="btn btn-primary" type="submit">Save Changes</button>
+    <a href="{{ route('comics.index', $comic->id) }}" class="btn btn-info ">
+      Cancel
+    </a>
   </form>
 @endsection

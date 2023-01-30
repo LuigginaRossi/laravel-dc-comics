@@ -36,6 +36,11 @@
     </div>
 
 
-    <button class="btn btn-primary" type="submit">Save New Comic</button>
+    <div class="d-flex aling-items-center gap-3 justify-content-center">
+      <button class="btn btn-primary" type="submit">Save New Comic</button>
+      <a href="{{ route('comics.index') }}" class="btn btn-info">
+        Cancel
+      </a>
+    </div>
   </form>
 @endsection

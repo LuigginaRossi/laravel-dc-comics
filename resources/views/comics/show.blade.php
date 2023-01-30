@@ -12,9 +12,15 @@
                     <div>{{$comic->series}}</div>
                     <div>{{$comic->type}}</div>
                     <div>{{$comic->price}}</div>
-                    <a href="{{ route('comics.index', $comic->id) }}" class="btn btn-info mt-3">
-                        Home
-                    </a>
+                    <div class="d-flex aling-items-center gap-3 mt-3">
+                        <a href="{{ route('comics.index', $comic->id) }}" class="btn btn-info ">
+                            Home
+                        </a>
+                        {{-- redirect edit.blade.php --}}
+                        <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning">
+                            <i class="fas fa-pencil"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
