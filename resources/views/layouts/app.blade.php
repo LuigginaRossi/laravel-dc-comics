@@ -12,23 +12,24 @@
 </head>
 
 <body>
+    <div class="container py-5">
+      {{-- header --}}
+      {{-- @include('partials.header') --}}
 
-  {{-- header --}}
-  {{-- @include('partials.header') --}}
+      <h1 class="text-center pt-4">DC COMICS</h1>
+      <div class="container my-5">
 
-  <h1 class="text-center">DC COMICS</h1>
-  <div class="container my-5">
+        {{-- segnaposto per il contenuto di ogni pagina.
+            Questo dovrà essere sostituito in ogni pagina con un contenuto diverso --}}
+        @yield('content')
+      </div>
 
-    {{-- segnaposto per il contenuto di ogni pagina.
-        Questo dovrà essere sostituito in ogni pagina con un contenuto diverso --}}
-    @yield('content')
-  </div>
+      {{-- @dump($comics) --}}
 
-  {{-- @dump($comics) --}}
-
-  {{-- footer --}}
-  {{-- @include('partials.footer') --}}
-
+      {{-- footer --}}
+      {{-- @include('partials.footer') --}}
+    </div>
+      
 </body>
 
 </html>

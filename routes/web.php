@@ -36,7 +36,7 @@ Route::post("/comics", [ComicController::class, "store"])->name("comics.store");
 
 
 //EDIT - Aggiorno i dati di una risorsa/istanza con un form 
-Route::post("/comics/{comic}/edit", [ComicController::class, "edit"])->name("comics.edit"); 
+Route::get("/comics/{comic}/edit", [ComicController::class, "edit"])->name("comics.edit"); 
 
 
 //UPDATE- ricevo dati del from edit e aggiorno DB
