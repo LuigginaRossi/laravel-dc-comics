@@ -3,8 +3,8 @@
 @section('content')
     {{-- <h4>file index</h4> --}}
     <div class="d-flex justify-content-end py-4 ">
-        <a href="{{ route('comics.create') }}" class="btn btn-warning">
-            Add New Comic<i class="fas fa-plus px-2"></i>
+        <a href="{{ route('comics.create') }}" class="btn btn-warning text-light">
+           <strong>Add New Comic</strong> <i class="fas fa-plus px-2"></i>
         </a>
     </div>
     <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -12,7 +12,7 @@
             <div class="col">
                 <div class="card">
                     <img src="{{$comic->thumb}}" class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <div class="card-body pt-5">
                         <h5 class="card-title"> {{$comic->title}}</h5>
                         <p class="card-text">{{Str::limit($comic->description , 30)}}</p>
                         {{-- <div>{{$comic->series}}</div>

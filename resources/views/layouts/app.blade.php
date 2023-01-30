@@ -11,12 +11,12 @@
   @vite('resources/js/app.js')
 </head>
 
-<body>
+<body class="bg-dark">
     <div class="container py-5">
       {{-- header --}}
       {{-- @include('partials.header') --}}
 
-      <h1 class="text-center pt-4">DC COMICS</h1>
+      <h1 class="text-center text-light pt-4">DC COMICS</h1>
       <div class="container my-5">
 
         {{-- segnaposto per il contenuto di ogni pagina.
